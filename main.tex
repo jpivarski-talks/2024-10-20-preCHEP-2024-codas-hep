@@ -22,6 +22,7 @@
 \usepackage{minted}
 \usepackage[thicklines]{cancel}
 \usepackage{fancyvrb}
+\usepackage{tcolorbox}
 
 \xdefinecolor{dianablue}{rgb}{0.18,0.24,0.31}
 \xdefinecolor{darkblue}{rgb}{0.1,0.1,0.7}
@@ -32,7 +33,7 @@
 \definecolor{darkgreen}{rgb}{0,0.6,0}
 \definecolor{mauve}{rgb}{0.58,0,0.82}
 
-\title[2024-10-20-preCHEP-2024-codas-hep]{CoDaS-HEP, US-CMS, US-ATLAS}
+\title[2024-10-20-preCHEP-2024-codas-hep]{CoDaS-HEP and US-CMS/US-ATLAS Training}
 \author{Jim Pivarski}
 \institute{Princeton University -- IRIS-HEP}
 \date{October 10, 2024}
@@ -121,8 +122,8 @@
 \vspace{0.5 cm}
 \begin{itemize}\setlength{\itemsep}{0.25 cm}
 \item<1-> Lecture-style presentations (PDF, PowerPoint, Keynote)
-\item<2-> Lectures mixed with small problems (Jupyter)
-\item<3-> Long exercises: from 20 minutes to 2 hours
+\item<2-> Lectures mixed with small hands-on exercises (Jupyter)
+\item<3-> Longer hands-on exercises: from 20 minutes to 2 hours
 \item<4-> Catered breakfasts and lunches, coffee breaks
 \item<5-> Social dinners and student bonding in dorms, pub crawls\ldots
 \end{itemize}
@@ -135,7 +136,7 @@
 \uncover<7->{With one exception, none of this material was from \textcolor{blue}{\url{hsf-training.org}}.}
 \end{frame}
 
-\begin{frame}{Interactive exercises 1 (me)}
+\begin{frame}{Hands-on exercises 1 (me)}
 \vspace{0.25 cm}
 \large
 \begin{columns}
@@ -166,7 +167,7 @@
 \end{columns}
 \end{frame}
 
-\begin{frame}{Interactive exercises 2 (Nick Smith, Nick Manganelli, Alex Held)}
+\begin{frame}{Hands-on exercises 2 (Nick Smith, Nick Manganelli, Alex Held)}
 \vspace{0.25 cm}
 \large
 \begin{columns}
@@ -179,6 +180,10 @@
 \tiny
 \vspace{0.2 cm}
 \textcolor{blue}{\href{https://github.com/iris-hep/uscms-idap-training/blob/main/coffea/coffea-challenge-samplegame.ipynb}{https://github.com/iris-hep/uscms-idap-training/blob/main/coffea/coffea-challenge-samplegame.ipynb}}
+
+\scriptsize
+\vspace{0.1 cm}
+(from LPC HATS)
 
 \small
 \vspace{0.225 cm}
@@ -195,7 +200,7 @@
 \end{columns}
 \end{frame}
 
-\begin{frame}{Interactive exercises 3 (Kilian Lieret)}
+\begin{frame}{Hands-on exercises 3 (Kilian Lieret)}
 \vspace{0.25 cm}
 \large
 \begin{columns}
@@ -222,7 +227,7 @@
 \end{columns}
 \end{frame}
 
-\begin{frame}{Interactive exercises 4 (Tim Mattson)}
+\begin{frame}{Hands-on exercises 4 (Tim Mattson)}
 \vspace{0.25 cm}
 \large
 \begin{columns}
@@ -253,12 +258,12 @@ contributions/5983265/attachments/2900081/
 \uncover<4->{Making students type whole programs manually is a good learning experience!}
 
 \vspace{0.2 cm}
-\uncover<5->{Can use editor + terminal of JupyterLab if necessary; most students used their laptops directly.}
+\uncover<5->{Students who can't install an OpenMP-enabled compiler on their laptop can use JupyterLab's text editor and terminal.}
 
 \end{columns}
 \end{frame}
 
-\begin{frame}{Interactive exercises 5 (Yana Osborne and me)}
+\begin{frame}{Hands-on exercises 5 (Yana Osborne and me)}
 \vspace{0.25 cm}
 \large
 \begin{columns}
@@ -274,7 +279,7 @@ contributions/5983265/attachments/2900081/
 
 \small
 \vspace{0.25 cm}
-\uncover<2->{Each lesson has lecture with short problems in slides (jupyterlab-deck) and a workbook (Jupyter), like the teacher/student notebooks, but also has two long (half hour) problems.}
+\uncover<2->{Each lesson has lecture with short problems in slides (jupyterlab-deck) and a workbook (Jupyter), like the teacher/student pair of notebooks, but also has two long (1/2 hour) problems.}
 
 \small
 \vspace{0.25 cm}
@@ -286,7 +291,7 @@ contributions/5983265/attachments/2900081/
 \end{columns}
 \end{frame}
 
-\begin{frame}{Interactive exercises 6 (me)}
+\begin{frame}{Hands-on exercises 6 (me)}
 \vspace{0.25 cm}
 \large
 \begin{columns}
@@ -318,7 +323,7 @@ contributions/5983265/attachments/2900081/
 \large
 \vspace{0.5 cm}
 \begin{itemize}\setlength{\itemsep}{0.45 cm}
-\item<1-> We know what we want to teach; it's easy to write talks/lectures on these topics but hard to create interactive problems at the right level: we informally reuse them by copy-paste-and-edit.
+\item<1-> We know what we want to teach; it's easy to write talks/lectures on these topics but hard to create hands-on problems at the right level: we informally reuse them by copy-paste-and-edit.
 \item<2-> \textcolor{blue}{\url{hsf-training.org}} would be more useful to us as a repository of problem sets that we can mix into our lessons, rather than full lessons.
 \item<3-> We also want to feed student solutions back into the main lecture, to discuss them, and we have been trying different technologies to do that.
 \begin{itemize}
@@ -380,20 +385,278 @@ CoDaS-HEP was held in 2017, 2018, 2019, 2022, 2023, and 2024.
 \uncover<2->{I could find survey results from all but 2019.}
 
 \vspace{0.5 cm}
-\uncover<3->{Survey consists of quantitative rankings and qualitative requests for comments, some general and some for each teacher/session.}
+\uncover<3->{Survey consists of quantitative rankings and qualitative requests for comments, some general and some per-teacher/session.}
 
 \vspace{0.5 cm}
 \uncover<4->{Per-teacher questions are useful for improving the program, but we'll only look at general questions here.}
 \end{frame}
 
 \begin{frame}{General quantitative questions}
+\large
+\vspace{0.2 cm}
+\begin{columns}
+\column{0.7\linewidth}
+\includegraphics[width=\linewidth]{PLOTS/evaluations_by_year.pdf}
 
+\column{0.3\linewidth}
+Mostly unchanging, mostly positive.
 
-
-
+\vspace{1 cm}
+\uncover<2->{They reflect well on us, but aren't useful for making decisions or changes.}
+\end{columns}
 \end{frame}
 
+\begin{frame}{Analyzing qualitative data: the free-form comment boxes}
+\vspace{0.5 cm}
+The students made a lot of good suggestions, but
+\begin{itemize}
+\item what were the most common suggestions?
+\item how can I show them without explicit quotes? (We didn't say they'd be public.)
+\end{itemize}
 
+\vspace{1 cm}
+\begin{uncoverenv}<2->
+I can summarize them for you, but
+\begin{itemize}
+\item my diligence might not be constant: I might weigh early comments more than later ones (there's a lot of text to read),
+\item some of the comments are about me: how can I convince you/myself that I've summarized them fairly?
+\end{itemize}
+\end{uncoverenv}
+\end{frame}
 
+\begin{frame}[fragile]{Trying a new thing: CharGPT for semantic clustering}
+\tiny
+\vspace{0.25 cm}
+\begin{columns}
+\column{1.1\linewidth}
+\begin{minted}{python}
+{
+  "model": model,               # "gpt-4o"
+  "temperature": temperature,   # 0.7
+  "messages": [
+    {"role": "system", "content": textwrap.dedent(f"""
+      All of the following statements are students' answers to the question, \"{question}\",
+      meaning the CoDaS-HEP Computing in High Energy Physics school, over five years: 2017, 2018, 2022, 2023, and 2024.
+      Each statement is numbered by year and a unique identifier. Summarize these statements by grouping them into
+      approximately {number} categories. Format the categories as JSON with a title and a several-sentence long paragraph
+      description for each. Don't mention any personal names and don't use any exact quotes. Make sure that all
+      concerns are addressed in the long descriptions. For each category, list all of the statements that fit that
+      category by their year-hyphen-identifier string. Put any uncategorized statements into a list of other_statements
+      and summarize them by a few sentences in other_statement_summary.
+    """).strip()},
+  ] + [{"role": "user", "content": f"{year}-{n + 1}. {stmt}"} for year in data for n, stmt in enumerate(data[year])],
+  "response_format": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "response",
+      "schema": {"type": "object", "properties": {
+        "categories": {"type": "array", "items": {"type": "object", "properties": {
+          "title": {"type": "string"},
+          "long_description": {"type": "string"},
+          "statements": {"type": "array", "items": {"type": "string"}},       # to verify that assignments are sensible
+        }}},
+        "other_statements": {"type": "array", "items": {"type": "string"}},   # to see which were unassigned
+        "other_statement_summary": {"type": "string"},
+      }},
+    },
+  },
+}
+\end{minted}
+\end{columns}
+\end{frame}
+
+\begin{frame}{``What did you like most about the school?''}
+\tiny
+\vspace{0.25 cm}
+\begin{columns}
+\column{1.1\linewidth}
+{\bf\small Diverse and Relevant Topics}
+
+Many students appreciated the wide array of topics covered during the school. The broad coverage allowed participants to learn about areas they might not have been exposed to otherwise and gain insights into diverse computational tools and techniques applicable to High Energy Physics (HEP). Students felt that the topics were relevant to both their current research and future endeavors, with subjects like machine learning, parallel programming, and Python often highlighted as particularly beneficial.
+
+\vspace{0.2 cm}
+{\bf\small Hands-On Exercises and Practical Learning}
+
+The hands-on exercises were highly valued by students, as they provided an opportunity to apply what they learned in a practical setting. Many participants found the interactive sessions and exercises helpful for reinforcing theoretical knowledge and developing practical skills. The approach of integrating exercises into the lectures was appreciated, as it allowed students to learn by doing and facilitated better retention of the material.
+
+\vspace{0.2 cm}
+{\bf\small Parallel Programming and Computational Tools}
+
+Parallel programming emerged as a standout topic among the participants, with many students expressing high interest and appreciation for the sessions dedicated to it. The lectures on parallel programming, including OpenMP and other tools, were frequently mentioned as highlights. Students valued learning about these advanced computational techniques, which they found applicable to their research and beneficial for their future work.
+
+\vspace{0.2 cm}
+{\bf\small Social Interaction and Networking}
+
+Participants valued the opportunity to network and interact socially with peers, lecturers, and experts in the field. The school provided a platform for students to connect with others, exchange ideas, and build professional relationships. Social events, coffee breaks, and the overall atmosphere were highlighted as conducive to forming meaningful connections and enhancing the learning experience.
+
+\vspace{0.2 cm}
+{\bf\small Overall Organization and Supportive Environment}
+
+The organization of the school, including logistics, accommodation, and food, was frequently praised by participants. Students appreciated the well-structured program, the attention to detail, and the supportive environment created by the organizers. The school's atmosphere was described as welcoming and conducive to learning, allowing participants to focus on their studies without unnecessary stress.
+
+\vspace{0.2 cm}
+{\bf\small Other statements}
+
+Several statements reflected individual preferences or specific experiences that didn't neatly fit into the main categories. These include mentions of specific lectures or tools that were particularly enjoyed, appreciation for the interactive style of the school, enjoyment of the campus or food, and personal learning outcomes. Some students highlighted the novelty of the topics and the exposure to new concepts, while others focused on the logistics and organization of the event.
+\end{columns}
+
+\begin{uncoverenv}<2->
+\vspace{-5 cm}
+\begin{tcolorbox}[colback=white, colframe=black]
+\begin{minipage}{\linewidth}
+\mbox{ } \hfill \includegraphics[height=4 cm]{PLOTS/like_most_categorization.pdf}\includegraphics[height=3 cm]{PLOTS/like_most_categorization_hist.pdf} \hfill \mbox{ }
+\end{minipage}
+\end{tcolorbox}
+\end{uncoverenv}
+\end{frame}
+
+\begin{frame}{``What did you like least about the school?''}
+\tiny
+\vspace{0.25 cm}
+\begin{columns}
+\column{1.1\linewidth}
+{\bf\small Machine Learning and Lecture Pace}
+
+Many students expressed concerns about the pace and structure of the machine learning sessions. The lectures were often described as rushed, chaotic, or difficult to follow, with insufficient time for hands-on exercises or deeper understanding of the material. There was a desire for more structured, interactive sessions and a broader introduction to machine learning concepts. Some students also felt that certain lectures moved too quickly over material, making it hard to grasp the content effectively.
+
+\vspace{0.2 cm}
+{\bf\small Living Conditions and Accommodations}
+
+A significant number of participants were dissatisfied with the dormitory conditions, including the cleanliness and comfort of the rooms and bathrooms. Issues with bedding, humidity, and pests were mentioned, as well as discomfort with shared facilities. Some students felt the living arrangements detracted from their overall experience at the school.
+
+\vspace{0.2 cm}
+{\bf\small Time Constraints and Schedule}
+
+The schedule of the school was a common concern, with many students feeling that the days were too packed, leaving insufficient time for rest, understanding, and application of the material. Early morning starts and long, intensive days contributed to fatigue and limited the ability to fully engage with the content. A longer duration for the school was suggested to allow more time for exercises and in-depth exploration of topics.
+
+\vspace{0.2 cm}
+{\bf\small Technical and Organizational Issues}
+
+Several students experienced technical difficulties during the sessions, which affected their learning experience. Problems with software setup, internet connectivity, and technical support were noted. Some lectures were poorly organized, with inconsistent setups for exercises and technical issues that interrupted the flow of learning. There was a call for better preparation and organization to streamline these processes.
+
+\vspace{0.2 cm}
+{\bf\small Content Relevance and Diversity}
+
+Some students felt that the content of the school was too focused on specific areas, such as the Large Hadron Collider (LHC), and did not cater to a broader range of interests within high energy physics. There were also comments on the lack of diversity among presenters and topics, and a desire for more inclusive and varied subject matter that would appeal to a wider audience.
+
+\vspace{0.2 cm}
+{\bf\small Other statements}
+
+Some students had generally positive experiences and did not express specific complaints about the school. There were comments about the physical environment, such as classroom temperature and weather, as well as minor logistical issues like timing of start times. A few remarks pointed to specific lectures or speakers that did not meet expectations, either due to presentation style or content relevance. Overall, the feedback included a mix of satisfaction and minor grievances not directly related to the main categories identified.
+
+\end{columns}
+
+\begin{uncoverenv}<2->
+\vspace{-5 cm}
+\begin{tcolorbox}[colback=white, colframe=black]
+\begin{minipage}{\linewidth}
+\mbox{ } \hfill \includegraphics[height=4 cm]{PLOTS/like_least_categorization.pdf}\includegraphics[height=3 cm]{PLOTS/like_least_categorization_hist.pdf} \hfill \mbox{ }
+\end{minipage}
+\end{tcolorbox}
+\end{uncoverenv}
+\end{frame}
+
+\begin{frame}{``Any other general comments, feedback, or suggestions?''}
+\tiny
+\vspace{0.45 cm}
+\begin{columns}
+\column{1.1\linewidth}
+{\bf\small General Appreciation and Positive Feedback}
+
+\vspace{0.1 cm}
+Participants consistently expressed gratitude and positive feedback about the school. Many found the experience enlightening, well-organized, and beneficial for their academic and professional growth. The workshops and lectures were generally well-received, with attendees appreciating the opportunity to learn and network with peers and experts in the field.
+
+\vspace{0.2 cm}
+{\bf\small Suggestions for Program Improvement}
+
+\vspace{0.1 cm}
+Participants suggested that the program could be improved by extending its duration, providing more time for hands-on exercises, and offering parallel sessions to cater to different levels of expertise in topics like machine learning. Some attendees recommended adding competitions, extra challenges, or large projects to foster engagement and practical application of skills learned.
+
+\vspace{0.2 cm}
+{\bf\small Logistical and Organizational Concerns}
+
+\vspace{0.1 cm}
+Several participants noted logistical issues, such as the need for clearer setup instructions before the event, better coordination with support staff, and improvements to room conditions. Suggestions included pre-event setup instructions, solutions for technical difficulties, and improvements to venue facilities to enhance the learning experience.
+
+\vspace{0.2 cm}
+{\bf\small Diversity and Inclusivity Concerns}
+
+\vspace{0.1 cm}
+There were concerns raised about diversity and inclusivity, particularly regarding gender and racial representation among participants and presenters. Suggestions included incorporating diversity statements and being mindful of inclusivity during all school activities to ensure a comfortable environment for everyone.
+
+\vspace{0.2 cm}
+{\bf\small Food and Accommodation Feedback}
+
+\vspace{0.1 cm}
+Feedback on food and accommodation was mixed, with many praising the quality and variety, while others suggested improvements such as offering vegan or halal options and addressing environmental concerns about waste. These aspects significantly influenced the overall satisfaction of participants during the school.
+
+\vspace{0.2 cm}
+{\bf\small Other statements}
+
+\vspace{0.1 cm}
+Some participants expressed gratitude and shared additional logistical suggestions, such as providing a clearer schedule, enhancing communication, and organizing campus tours. There were also comments on the importance of providing a welcoming and inclusive environment, even in informal settings like meals and social events.
+
+\end{columns}
+
+\begin{uncoverenv}<2->
+\vspace{-5 cm}
+\begin{tcolorbox}[colback=white, colframe=black]
+\begin{minipage}{\linewidth}
+\mbox{ } \hfill \includegraphics[height=4 cm]{PLOTS/general_feedback_categorization.pdf}\includegraphics[height=3 cm]{PLOTS/general_feedback_categorization_hist.pdf} \hfill \mbox{ }
+\end{minipage}
+\end{tcolorbox}
+\end{uncoverenv}
+\end{frame}
+
+\begin{frame}{``Should we extend the school to two weeks?'' (2024 only)}
+\tiny
+\vspace{0.45 cm}
+\begin{columns}
+\column{1.1\linewidth}
+{\bf\small Concerns About Length and Format}
+
+\vspace{0.1 cm}
+Some participants express concerns about extending the school to two weeks. They believe that a longer duration might make it difficult for students to attend due to commitments at their home institutions. Suggestions include keeping the school format similar to a course that offers credits, making the program flexible, or maintaining a shorter duration like a week. Moreover, improvements in accommodations and facilities are considered necessary if the school is extended, as well as structured social programming to balance the intensive schedule.
+
+\vspace{0.4 cm}
+{\bf\small Benefits of Extended Duration}
+
+\vspace{0.1 cm}
+Extending the school to 10 days or two weeks is seen as an opportunity to delve deeper into the topics. Participants suggest more time for exercises, hands-on work, and small group projects. A longer duration could also allow for covering more material or exploring specific topics in greater depth, such as machine learning or neural networks. This could enhance the overall learning experience by providing students with more time to digest and apply the knowledge.
+
+\vspace{0.4 cm}
+{\bf\small Suggestions for Structure and Content}
+
+\vspace{0.1 cm}
+Participants recommend structuring the school to include shorter days, more free time, and breaks to prevent burnout. Incorporating group projects and social activities can enhance interactions among students. Suggestions include starting later in the day, including local cultural activities, and allowing time for students to explore independently. There is also a proposal to extend the school incrementally and gather feedback each year to refine the experience.
+
+\vspace{0.4 cm}
+{\bf\small Other statements}
+
+\vspace{0.1 cm}
+Some participants express general support for extending the school without specific suggestions for improvements. Others feel the current duration suffices for the material covered, while one participant expresses enthusiasm but acknowledges potential challenges in attending a longer program.
+\end{columns}
+
+\begin{uncoverenv}<2->
+\vspace{-5 cm}
+\begin{tcolorbox}[colback=white, colframe=black]
+\begin{minipage}{\linewidth}
+\mbox{ } \hfill \includegraphics[height=4 cm]{PLOTS/two_weeks_categorization.pdf}\includegraphics[height=3 cm]{PLOTS/two_weeks_categorization_hist.pdf} \hfill \mbox{ }
+\end{minipage}
+\end{tcolorbox}
+\end{uncoverenv}
+\end{frame}
+
+\begin{frame}{Conclusions from student surveys}
+\vspace{0.5 cm}
+\large
+\begin{itemize}\setlength{\itemsep}{0.5 cm}
+\item<1-> Hands-on exercises are highlighted as important.
+\item<2-> The topics are about right, but the applications are a little too LHC-focused.
+\item<3-> We've had problems (and high turn-over) with the machine learning content, but it's decreasing.
+\item<4-> New ideas: pre-event preparatory content and/or parallel sessions.
+\item<5-> Students enjoy the in-person aspect of the school, though not the accommodations, and are split on whether it should be extended to two weeks. Those in favor want a longer, lower-intensity event; those opposed think that a longer school would conflict with other obligations.
+\end{itemize}
+\end{frame}
 
 \end{document}
